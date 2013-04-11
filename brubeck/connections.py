@@ -99,6 +99,7 @@ def load_zmq():
         from request_handling import CORO_LIBRARY
         if CORO_LIBRARY == 'gevent':
             from gevent_zeromq import zmq
+            import zmq.green as zmq
         elif CORO_LIBRARY == 'eventlet':
             from eventlet.green import zmq
         load_zmq._zmq = zmq
